@@ -5,30 +5,41 @@ SELECT
   Distance_km,
   Gym_YN,
   
-  -- 1. Date Dimensions (For time-series analysis)
-  FORMAT_DATE('%Y-%m', Date) AS month_year,
-  EXTRACT(ISOWEEK FROM Date) AS week_number,
+  -- 1. Date & Time Dimensions (Standard sorting fields)
+  EXTRACT(YEAR FROM Date) AS year_number,
   EXTRACT(MONTH FROM Date) AS month_number,
   FORMAT_DATE('%B', Date) AS month_name,
-  EXTRACT(YEAR FROM Date) AS year_number,
-  
-  -- 2. Gym Counter (Boolean to Integer conversion)
-  CASE WHEN Gym_YN = 'Y' THEN 1 ELSE 0 END AS gym_count,
-  
-  -- 3. Human Engine: Efficiency (Steps per Heartbeat)
-  -- Uses NULLIF to avoid division by zero errors
-  ROUND(Step_Count / NULLIF(Heart_Rate, 0), 2) AS efficiency_mpg,
-  
-  -- 4. Human Engine: Capacity Score (Efficiency x Scaling Factor)
-  -- Standardizing at 30 to match your 2025 performance dashboard
-  ROUND((Step_Count / NULLIF(Heart_Rate, 0)) * 30, 0) AS capacity_score,
+  EXTRACT(ISOWEEK FROM Date) AS week_number,
+  FORMAT_DATE('%Y-%m', Date) AS month_year,
 
-  -- 5. Efficiency Delta (Example of a calculated flag)
-  -- Helps identify "High Performance" days (e.g., above your 55 MPG target)
+  -- 2. Behavioral Segments (User-Adjustable)
+  -- Tweak these ranges to match your specific activity levels
   CASE 
-    WHEN (Step_Count / NULLIF(Heart_Rate, 0)) >= 55 THEN 'High Efficiency'
+    WHEN Step_Count < 1000 THEN 'Inactive'
+    WHEN Step_Count BETWEEN 1000 AND 4999 THEN 'Low Activity'
+    WHEN Step_Count BETWEEN 5000 AND 10000 THEN 'Active / Gym'
+    WHEN Step_Count BETWEEN 10001 AND 20000 THEN 'High Activity'
+    WHEN Step_Count > 20000 THEN 'Peak Effort'
+    ELSE 'Unknown'
+  END AS activity_segment,
+
+  -- 3. Volume & Frequency Logic
+  CASE WHEN Gym_YN = 'Y' THEN 1 ELSE 0 END AS gym_count,
+  -- Tweak the '20000' below to define your own "Outlier" or "High Travel" days
+  CASE WHEN Step_Count > 20000 THEN 1 ELSE 0 END AS is_high_volume_day,
+
+  -- 4. Human Engine Performance (Calculated ROI)
+  -- Efficiency_MPG: Steps per Heartbeat (Biological Cost)
+  IFNULL(ROUND(SAFE_DIVIDE(Step_Count, Heart_Rate), 2), 0) AS efficiency_mpg,
+  
+  -- Capacity_Score: Scaled by 30 for visualization clarity in dashboards
+  IFNULL(ROUND(SAFE_DIVIDE(Step_Count, Heart_Rate) * 30, 0), 0) AS capacity_score,
+
+  -- 5. Performance Tiering (Adjust the '55' threshold to your fitness level)
+  CASE 
+    WHEN SAFE_DIVIDE(Step_Count, Heart_Rate) >= 55 THEN 'High Efficiency'
     ELSE 'Standard'
   END AS performance_tier
 
-FROM `enter.tablename_123456.events_*`
+FROM `enter.tablename_123456.events_*` 
 ORDER BY Date DESC
