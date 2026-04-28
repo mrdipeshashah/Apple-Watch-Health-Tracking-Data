@@ -12,9 +12,11 @@ The core metircs that are needed at a daily level:
 * Heart Rate
 * Distance (KM)
 
-Then get the data into Google Sheets using this template - https://docs.google.com/spreadsheets/d/1rJIg44mvjqyTCQPpO0dZ13MtRhzehohWx9Nis5gkFgs/edit?usp=sharing 
+Then get the data into Google Sheets using this template (do not change headers) - https://docs.google.com/spreadsheets/d/1rJIg44mvjqyTCQPpO0dZ13MtRhzehohWx9Nis5gkFgs/edit?usp=sharing 
 
 THe key addtional requirement in the Google Sheet is the tracking of if you have visited the Gym, which is tracked as Y(Yes) and N(No). 
+
+It also requires having Big Query setup. 
 
 ## 🧬 The "Biological KPI" Suite
 This project utilizes three proprietary metrics to distinguish between mere "movement" and "performance."
