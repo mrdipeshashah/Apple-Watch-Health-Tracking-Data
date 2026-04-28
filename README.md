@@ -1,5 +1,5 @@
 # 🏃‍♂️ The Human Engine: Predictive Health Modeling
-> Transforming Apple Watch health data into a dynamic performance engine using SQL, BigQuery, and Looker Studio.
+Transforming Apple Watch health data into a dynamic performance engine using SQL, BigQuery, and Looker Studio.
 
 ## 📌 Project Overview
 This project reframes personal health tracking as "Engine Management." By treating physical activity as output and heart rate as internal stress, this system creates a **90-day predictive model** to forecast future physical requirements and measure cardiovascular efficiency through December 2026.
