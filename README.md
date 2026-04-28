@@ -7,12 +7,12 @@ Apple Health provides some good data but it's also quite limiting as well, I wan
 ## THE PROCESS 
 Data collection is a critical step. 
 
-1) To get the data exported out of Apple Watch it requires using Health Auto Export (or similar) - https://apps.apple.com/us/app/health-auto-export-json-csv/id1115567069 it provides the ability to get the data into CSV. 
+1) To get the data exported out of Apple Watch it requires using Health Auto Export (or similar) - https://apps.apple.com/us/app/health-auto-export-json-csv/id1115567069 it provides the ability to get the data into CSV.
 
-The core metircs that are needed at a daily level: 
-* Step Count
-* Heart Rate
-* Distance (KM)
+   The core metircs that are needed at a daily level: 
+   * Step Count
+   * Heart Rate
+   * Distance (KM)
 
 2) Then get the data into Google Sheets using this template (do not change headers) - https://docs.google.com/spreadsheets/d/1rJIg44mvjqyTCQPpO0dZ13MtRhzehohWx9Nis5gkFgs/edit?usp=sharing 
 
