@@ -16,7 +16,7 @@ Data collection is a critical step.
 
 2) Then get the data into Google Sheets using this template (do not change headers) - https://docs.google.com/spreadsheets/d/1rJIg44mvjqyTCQPpO0dZ13MtRhzehohWx9Nis5gkFgs/edit?usp=sharing 
 
-THe key addtional requirement in the Google Sheet is the tracking of if you have visited the Gym, which is tracked as Y(Yes) and N(No). 
+   The key addtional requirement in the Google Sheet is the tracking of if you have visited the Gym, which is tracked as Y(Yes) and N(No). 
 
 3) It also requires having Big Query setup. 
 
