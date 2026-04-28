@@ -1,0 +1,52 @@
+WITH RawData AS (
+  SELECT *,
+    -- Only calculate MPG if we have both steps and heart rate
+    IF(Step_Count > 0 AND Heart_Rate > 0, SAFE_DIVIDE(Step_Count, Heart_Rate), NULL) AS efficiency_mpg
+  FROM  `enter.tablename_123456.events_*`
+),
+MovingAverages AS (
+  SELECT *,
+    -- 90-Day Rolling Baselines (Calculated only from rows with ACTUAL data)
+    AVG(efficiency_mpg) OVER(ORDER BY Date ROWS BETWEEN 90 PRECEDING AND 1 PRECEDING) AS baseline_mpg,
+    AVG(Step_Count) OVER(ORDER BY Date ROWS BETWEEN 90 PRECEDING AND 1 PRECEDING) AS baseline_steps,
+    AVG(Distance_km) OVER(ORDER BY Date ROWS BETWEEN 90 PRECEDING AND 1 PRECEDING) AS baseline_distance
+  FROM RawData
+)
+SELECT 
+  Date,
+  Gym_YN,
+  
+  -- 1. Actuals (Hidden if row is empty for future dates)
+  Step_Count,
+  Heart_Rate,
+  Distance_km AS actual_distance,
+  IFNULL(ROUND(efficiency_mpg * 30, 0), NULL) AS capacity_actual,
+
+  -- 2. Behavioral Segments (Shows 'Future' for empty rows)
+  CASE 
+    WHEN Step_Count IS NULL THEN 'Planned / Future'
+    WHEN Step_Count < 1000 THEN 'Netflix and Chill'
+    WHEN Step_Count BETWEEN 1000 AND 4999 THEN 'Bare Minimum'
+    WHEN Step_Count BETWEEN 5000 AND 10000 THEN 'Gym Routine'
+    WHEN Step_Count BETWEEN 10001 AND 20000 THEN 'Exploring'
+    WHEN Step_Count > 20000 THEN 'Travelling'
+    ELSE 'Unknown'
+  END AS activity_segment,
+
+  -- 3. Steps: Baseline vs Stretch
+  ROUND(baseline_steps, 0) AS step_baseline,
+  ROUND(baseline_steps * 1.05, 0) AS step_stretch_goal,
+
+  -- 4. Distance: Baseline vs Stretch
+  ROUND(baseline_distance, 2) AS distance_baseline,
+  ROUND(baseline_distance * 1.05, 2) AS distance_stretch_goal,
+
+  -- 5. Capacity: Baseline vs Stretch
+  ROUND(baseline_mpg * 30, 0) AS capacity_baseline,
+  ROUND(baseline_mpg * 1.05 * 30, 0) AS capacity_stretch_goal,
+
+  -- 6. Variance (Only shows for past/current days)
+  IF(efficiency_mpg IS NOT NULL, ROUND((efficiency_mpg * 30) - (baseline_mpg * 30), 0), NULL) AS capacity_variance
+
+FROM MovingAverages
+ORDER BY Date DESC
