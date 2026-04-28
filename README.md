@@ -1,7 +1,9 @@
-# 🏃‍♂️ The Human Engine: Predictive Health Modeling
-Transforming Apple Watch health data into a dynamic performance engine using SQL, BigQuery, and Looker Studio.
+# PREDICTIVE HEALTH MODELLING
+Transforming Apple Watch health data to provide richer insights with using the Google Ecoysystem - Google Sheets + Big Query + Data studio 
 
-## 📌 Project Overview
+## OVERVIEW
+Apple Health provides some good data but it's also quite limiting as well, I wanted to dig into the data more and surfass richer insights to understand the impact of my gym sessions which is very much linked to my strectching I do at least once a month. The common view is to do 10K steps a day which is a great benchmark to have but it was not giving me the insights I wanted. The goal was to move away from step count which I was using as the success metric.  
+
 This project reframes personal health tracking as "Engine Management." By treating physical activity as output and heart rate as internal stress, this system creates a **90-day predictive model** to forecast future physical requirements and measure cardiovascular efficiency through December 2026.
 
 ## 🧬 The "Biological KPI" Suite
