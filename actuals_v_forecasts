@@ -2,7 +2,7 @@ WITH RawData AS (
   SELECT *,
     -- Only calculate MPG if we have both steps and heart rate
     IF(Step_Count > 0 AND Heart_Rate > 0, SAFE_DIVIDE(Step_Count, Heart_Rate), NULL) AS efficiency_mpg
-  FROM  `enter.tablename_123456.events_*`
+  FROM `enter.tablename_123456.events_*`
 ),
 MovingAverages AS (
   SELECT *,
@@ -15,14 +15,21 @@ MovingAverages AS (
 SELECT 
   Date,
   Gym_YN,
+
+  -- 1. Integrated Date Fields (For proper Dashboard formatting)
+  EXTRACT(YEAR FROM Date) AS year_number,
+  EXTRACT(MONTH FROM Date) AS month_number,
+  FORMAT_DATE('%B', Date) AS month_name,
+  EXTRACT(WEEK FROM Date) AS week_number,
+  FORMAT_DATE('%Y-%m', Date) AS month_year,
   
-  -- 1. Actuals (Hidden if row is empty for future dates)
+  -- 2. Actuals (Hidden if row is empty for future dates)
   Step_Count,
   Heart_Rate,
   Distance_km AS actual_distance,
   IFNULL(ROUND(efficiency_mpg * 30, 0), NULL) AS capacity_actual,
 
-  -- 2. Behavioral Segments (Shows 'Future' for empty rows)
+  -- 3. Behavioral Segments (Shows 'Future' for empty rows)
   CASE 
     WHEN Step_Count IS NULL THEN 'Planned / Future'
     WHEN Step_Count < 1000 THEN 'Netflix and Chill'
@@ -33,19 +40,19 @@ SELECT
     ELSE 'Unknown'
   END AS activity_segment,
 
-  -- 3. Steps: Baseline vs Stretch
+  -- 4. Steps: Baseline vs Stretch
   ROUND(baseline_steps, 0) AS step_baseline,
   ROUND(baseline_steps * 1.05, 0) AS step_stretch_goal,
 
-  -- 4. Distance: Baseline vs Stretch
+  -- 5. Distance: Baseline vs Stretch
   ROUND(baseline_distance, 2) AS distance_baseline,
   ROUND(baseline_distance * 1.05, 2) AS distance_stretch_goal,
 
-  -- 5. Capacity: Baseline vs Stretch
+  -- 6. Capacity: Baseline vs Stretch
   ROUND(baseline_mpg * 30, 0) AS capacity_baseline,
   ROUND(baseline_mpg * 1.05 * 30, 0) AS capacity_stretch_goal,
 
-  -- 6. Variance (Only shows for past/current days)
+  -- 7. Variance (Only shows for past/current days)
   IF(efficiency_mpg IS NOT NULL, ROUND((efficiency_mpg * 30) - (baseline_mpg * 30), 0), NULL) AS capacity_variance
 
 FROM MovingAverages
