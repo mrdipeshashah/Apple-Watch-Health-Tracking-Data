@@ -4,7 +4,17 @@ Transforming Apple Watch health data to provide richer insights with using the G
 ## OVERVIEW
 Apple Health provides some good data but it's also quite limiting as well, I wanted to dig into the data more and surfass richer insights to understand the impact of my gym sessions which is very much linked to my strectching I do at least once a month. The common view is to do 10K steps a day which is a great benchmark to have but it was not giving me the insights I wanted. The goal was to move away from step count which I was using as the success metric.  
 
-This project reframes personal health tracking as "Engine Management." By treating physical activity as output and heart rate as internal stress, this system creates a **90-day predictive model** to forecast future physical requirements and measure cardiovascular efficiency through December 2026.
+## THE PROCESS 
+Data collection is a critical first step. To get the data exported out of Apple Watch it requires using Health Auto Export (or similar) - https://apps.apple.com/us/app/health-auto-export-json-csv/id1115567069 it provides the ability to get the data into CSV. 
+
+The core metircs that are needed at a daily level: 
+* Step Count
+* Heart Rate
+* Distance (KM)
+
+Then get the data into Google Sheets using this template - https://docs.google.com/spreadsheets/d/1rJIg44mvjqyTCQPpO0dZ13MtRhzehohWx9Nis5gkFgs/edit?usp=sharing 
+
+THe key addtional requirement in the Google Sheet is the tracking of if you have visited the Gym, which is tracked as Y(Yes) and N(No). 
 
 ## 🧬 The "Biological KPI" Suite
 This project utilizes three proprietary metrics to distinguish between mere "movement" and "performance."
