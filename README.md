@@ -9,14 +9,14 @@ Data collection is a critical step.
 
 1) To get the data exported out of Apple Watch it requires using Health Auto Export (or similar) - https://apps.apple.com/us/app/health-auto-export-json-csv/id1115567069 it provides the ability to get the data into CSV.
 
-   The core metircs that are needed at a daily level: 
+   The core metircs that need to be tracked at a daily level: 
    * Step Count
    * Heart Rate
    * Distance (KM)
 
 2) Then get the data into Google Sheets using this template (do not change headers) - https://docs.google.com/spreadsheets/d/1rJIg44mvjqyTCQPpO0dZ13MtRhzehohWx9Nis5gkFgs/edit?usp=sharing 
 
-   The key addtional requirement in the Google Sheet is the tracking of if you have visited the Gym, which is tracked as Y(Yes) and N(No). 
+   The key addtional requirement in the Google Sheet is the tracking if you have visited the Gym, which is tracked as Y(Yes) and N(No). 
 
 3) It also requires having Big Query setup. 
 
