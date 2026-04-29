@@ -96,25 +96,25 @@ This project utilizes two primary BigQuery views to separating real-time efficie
 
 The dashboard is structured into three layers: 
 
-**1- High-Level Performance**
+**1-High-Level Performance**
 
 ### **The Scoreboard**
-#### **1. Monthly Volume Step Count Distribution**
+#### **Monthly Volume Step Count Distribution**
 * **Focus:** Total absolute step volume per month.
 * **Insight:** Provides a macro view of physical activity across years to identify seasonal trends and long-term volume growth.
 
-#### **2. Training Consistency: Monthly Gym Frequency**
+#### **Training Consistency: Monthly Gym Frequency**
 * **Focus:** Tracks the number of intentional workout sessions completed each month.
 * **Insight:** Acts as a lead indicator for performance; higher gym frequency typically precedes surges in cardiovascular efficiency.
 
-#### **3. Yearly Performance (The Master Table)**
+#### **Yearly Performance (The Master Table)**
 * **Focus:** A historical heat map of Step Count, Gym Count, Capacity Score, and Efficiency MPG.
 * **Insight:** Provides an at-a-glance comparison of annual performance, highlighting 2025 as a peak efficiency year with a record 201 gym sessions.
 
 **2-The Forecasting Runway**
 
 ### **The Forecasting Runway**
-#### **4. Actual vs. Forecasted Step Count**
+#### **Actual vs. Forecasted Step Count**
 * **Focus:** Maps real-time daily output against the 90-day rolling baseline.
 * **Insight:** Extends the timeline through December 2026, visualizing the "Maintenance Runway" to show required volume for future months.
 
@@ -125,7 +125,7 @@ The dashboard is structured into three layers:
 **3-Biometric Efficiency**
 
 ### **Biometric Efficiency (The "Human Engine")**
-#### **6. Efficiency Over Time (MPG & Capacity)**
+#### **Efficiency Over Time (MPG & Capacity)**
 * **Focus:** Tracks the relationship between Efficiency MPG (Economy) and Capacity Score (Volume).
 * **Insight:** Visualizes how improvements in cardiovascular health allow for higher work volumes without increased physiological strain.
 
