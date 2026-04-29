@@ -96,7 +96,7 @@ This project utilizes two primary BigQuery views to separating real-time efficie
 
 The dashboard is structured into three layers: 
 
-**1-High-Level Performance**
+### **1-High-Level Performance**
 
 ### **The Scoreboard**
 #### **Monthly Volume Step Count Distribution**
@@ -113,7 +113,6 @@ The dashboard is structured into three layers:
 
 ### **2-The Forecasting Runway**
 
-### **The Forecasting Runway**
 #### **Actual vs. Forecasted Step Count**
 * **Focus:** Maps real-time daily output against the 90-day rolling baseline.
 * **Insight:** Extends the timeline through December 2026, visualizing the "Maintenance Runway" to show required volume for future months.
@@ -122,7 +121,7 @@ The dashboard is structured into three layers:
 * **Focus:** A targeted look at the variance between current monthly output and the baseline/stretch goals.
 * **Insight:** Immediately identifies if the "Engine" is currently in a state of growth (hitting targets) or recovery (falling below baseline).
 
-**3-Biometric Efficiency**
+### **3-Biometric Efficiency**
 
 ### **Biometric Efficiency (The "Human Engine")**
 #### **Efficiency Over Time (MPG & Capacity)**
