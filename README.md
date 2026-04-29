@@ -37,9 +37,15 @@ From the data available in the Google Sheet, I have developed three custom KPI's
 * **The "Turbocharger" Metric:** While Capacity Score measures total volume, **Avg Steps per Session** measures **Intensity**. 
 * **Insight:** Capacity Score alone lacks context. High-value insights come from pairing volume with intensity—proving the engine isn't just running longer, but harder during training sessions.
 
-
 ## The Forecasting Engine
 Using Big Query utilizing a **90-day rolling look-back period** to look into the future. 
+
+90-day lookback was selected for 2 reasons: 
+
+1) Relevancy - 90 day windows captures the most recent trends and ensures forecasts are releastic and attainable. Looking back at 6 months of data is a poorer predictor in fitness. THe most recent is the most accurate which is why 90-days is the sweet spot
+2) Volatility - Using the 90-day average the forecast is not massively impacted by a massive spike when travelling or a netflix and chill day 
+
+In the Google Sheet, it requires extending out the dates i.e. in April 2026 - extending the dates to end July 2026 which covers the 90-day rolling look back period. Extending the dates to end December 2026 can be done but it will only cover a 90-day look-back from the last available date inputted into the Google sheet. 
 
 * **Step Baseline (Maintenance):** The predicted volume required to maintain current fitness based on the last 3 months of behavior.
 * **Step Stretch Goal (Growth):** A +5% "Progressive Overload" target. Consistently hitting this goal "pulls" the baseline upward over time, expanding the engine's total capacity.
