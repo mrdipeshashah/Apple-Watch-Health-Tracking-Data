@@ -55,9 +55,28 @@ In the Google Sheet, it requires extending out the dates i.e. in April 2026 - ex
 * **Step Count** (**Actual Step Count**) - The step count that was inputted into the Google Sheet 
 * **Step Stretch Goal (5% Growth)** - A +5% "Progressive Overload" target. Consistently hitting this goal "pulls" the baseline upward over time, expanding the engine's total capacity.
 
-## 🛠 Tech Stack & Transformation
-* **Data Source:** Apple Watch (Health Auto Export)
-* **Warehouse:** Google BigQuery
-* **Visualization:** Looker Studio
-* **Sorting Logic:** The model utilizes `month_year` and `month_number` to ensure chronological accuracy across multi-year data sets.
+## 📖 Data Glossary
+
+### **Core Dimensions**
+| Field Name | Description |
+| :--- | :--- |
+| **Date** | The primary calendar key for activity tracking. |
+| **month_number** | Numeric month (1-12) used to force chronological sorting in visualizations. |
+| **month_year** | Formatted string (YYYY-MM) to ensure timeline continuity across multiple years. |
+| **activity_segment** | Behavioral classification (e.g., "Gym Routine", "Travelling") based on step volume. |
+
+### **The Efficiency Model (`v_fitness_master_efficiency`)**
+| Field Name | Description |
+| :--- | :--- |
+| **is_high_travel_day** | Binary flag identifying high-volume step outliers (>20k steps). |
+| **Efficiency_MPG** | Cardiovascular Economy: `Total Steps / Average Heart Rate`. |
+| **Capacity_Score** | Standardized performance index using a 30x multiplier on Efficiency MPG. |
+
+### **The Forecasting Model (`v_fitness_master_actual_v_targets`)**
+| Field Name | Description |
+| :--- | :--- |
+| **step_baseline** | Maintenance Forecast: The 90-day rolling average of step volume. |
+| **step_stretch_goal** | Growth Forecast: Baseline + 5% target for progressive overload. |
+| **capacity_actual** | Real-time performance score for active tracking days. |
+| **capacity_variance** | The performance gap: Delta between `capacity_actual` and `capacity_baseline`. |
 
