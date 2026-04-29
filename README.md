@@ -39,7 +39,7 @@ From the data available in the Google Sheet, I have developed three custom KPI's
 
 
 ## The Forecasting Engine
-With Big Query utilizing a **90-day rolling window** to project benchmarks into the future. 
+Using Big Query it utilizes a utilizes a **90-day rolling look-back period** to look into the future. 
 
 * **Step Baseline (Maintenance):** The predicted volume required to maintain current fitness based on the last 3 months of behavior.
 * **Step Stretch Goal (Growth):** A +5% "Progressive Overload" target. Consistently hitting this goal "pulls" the baseline upward over time, expanding the engine's total capacity.
