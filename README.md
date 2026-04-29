@@ -47,9 +47,9 @@ Using Big Query utilizing a **90-day rolling look-back period** to look into the
 
 In the Google Sheet, it requires extending out the dates i.e. in April 2026 - extending the dates to end July 2026 which covers the 90-day rolling look back period. Extending the dates to end December 2026 can be done but it will only cover a 90-day look-back from the last available date inputted into the Google sheet. 
 
-* **Step Baseline (Maintenance):** (**Forecasted Step Count**) The predicted volume required to maintain current fitness based on the last 3 months of behavior.
-* **Step Count** (**Actual Step Count**) The step count that was inputted into the Google Sheet 
-* **Step Stretch Goal (Growth):** A +5% "Progressive Overload" target. Consistently hitting this goal "pulls" the baseline upward over time, expanding the engine's total capacity.
+* **Step Baseline** (**Forecasted Step Count**) - The predicted volume required to maintain current fitness based on the last 3 months of behavior.
+* **Step Count** (**Actual Step Count**) - The step count that was inputted into the Google Sheet 
+* **Step Stretch Goal (5% Growth)** - A +5% "Progressive Overload" target. Consistently hitting this goal "pulls" the baseline upward over time, expanding the engine's total capacity.
 
 ## 🛠 Tech Stack & Transformation
 * **Data Source:** Apple Watch (Health Auto Export)
