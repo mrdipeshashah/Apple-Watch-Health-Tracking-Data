@@ -65,14 +65,14 @@ In the Google Sheet, it requires extending out the dates i.e. in April 2026 - ex
 | **month_year** | Formatted string (YYYY-MM) to ensure timeline continuity across multiple years. |
 | **activity_segment** | Behavioral classification (e.g., "Gym Routine", "Travelling") based on step volume. |
 
-### **The Efficiency Model (`v_fitness_master_efficiency`)**
+### **The Efficiency Model (`base_view`)**
 | Field Name | Description |
 | :--- | :--- |
 | **is_high_travel_day** | Binary flag identifying high-volume step outliers (>20k steps). |
 | **Efficiency_MPG** | Cardiovascular Economy: `Total Steps / Average Heart Rate`. |
 | **Capacity_Score** | Standardized performance index using a 30x multiplier on Efficiency MPG. |
 
-### **The Forecasting Model (`v_fitness_master_actual_v_targets`)**
+### **The Forecasting Model (`actual_v_targets`)**
 | Field Name | Description |
 | :--- | :--- |
 | **step_baseline** | Maintenance Forecast: The 90-day rolling average of step volume. |
