@@ -21,7 +21,7 @@ The data collection prcoess is the biggest step and getting it right is critical
 3) It also requires having Big Query setup. Creating a dataset & table (using the Google Sheet)
 
 ## KEY KPI'S TO TRACK PERFORMANCE 
-Have developed three custom KPI's to better track that measures cardiovascular better from 'movement' to 'performance' 
+From the data available in the Google Sheet, I have developed three custom KPI's to better measures cardiovascular from 'movement' to 'performance' 
 
 ### 1. Efficiency MPG (Steps per Heartbeat)
 * **Formula:** `Total Steps / Average Heart Rate`
