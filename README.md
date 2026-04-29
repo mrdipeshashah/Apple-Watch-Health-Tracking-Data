@@ -33,9 +33,13 @@ From the data available in the Google Sheet, I have developed three custom KPI's
 * **Concept:** This translates the "Economy" of the body into a "Performance Index." 
 * **The Multiplier:** A factor of x30 creates a visual scale that clearly distinguishes "Peak" performance days from "Maintenance" days. It provides a standardized daily "Work Volume" score.
 
+**Notes** - Tested out the multiplier first of x 20 then x 30. Using a multiplier of x 30 for Capacity Score provided a metric to visualise total output on a scale that allows to see good v average days turning into a performance index. 
+
 ### 3. Intensity Context (Avg Steps per Session)
 * **The "Turbocharger" Metric:** While Capacity Score measures total volume, **Avg Steps per Session** measures **Intensity**. 
 * **Insight:** Capacity Score alone lacks context. High-value insights come from pairing volume with intensity—proving the engine isn't just running longer, but harder during training sessions.
+
+
 
 ## The Forecasting Engine
 Using Big Query utilizing a **90-day rolling look-back period** to look into the future. 
