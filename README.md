@@ -57,7 +57,7 @@ In the Google Sheet, it requires extending out the dates i.e. in April 2026 - ex
 
 ## Data Glossary
 
-This project utilizes two primary BigQuery views to separate real-time efficiency metrics from long-term forecasting. Below is the breakdown of every dimension and metric used in the model.
+This project utilizes two primary BigQuery views to separating real-time efficiency metrics from forecasting. Below is the breakdown of every dimension and metric used in the model.
 
 ### **1. Core Dimensions (Shared Logic)**
 | Field | Definition |
