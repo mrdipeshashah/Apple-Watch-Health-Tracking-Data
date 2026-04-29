@@ -111,7 +111,7 @@ The dashboard is structured into three layers:
 * **Focus:** A historical heat map of Step Count, Gym Count, Capacity Score, and Efficiency MPG.
 * **Insight:** Provides an at-a-glance comparison of annual performance, highlighting 2025 as a peak efficiency year with a record 201 gym sessions.
 
-**2-The Forecasting Runway**
+### **2-The Forecasting Runway**
 
 ### **The Forecasting Runway**
 #### **Actual vs. Forecasted Step Count**
