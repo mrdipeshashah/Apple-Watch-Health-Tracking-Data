@@ -18,7 +18,7 @@ Data collection is a critical step.
 
    The key addtional requirement in the Google Sheet is the tracking if you have visited the Gym, which is tracked as Y(Yes) and N(No). 
 
-3) It also requires having Big Query setup. 
+3) It also requires having Big Query setup. Creating a dataset & table (using the Google Sheet)
 
 ## 🧬 The "Biological KPI" Suite
 This project utilizes three proprietary metrics to distinguish between mere "movement" and "performance."
