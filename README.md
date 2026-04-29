@@ -55,28 +55,41 @@ In the Google Sheet, it requires extending out the dates i.e. in April 2026 - ex
 * **Step Count** (**Actual Step Count**) - The step count that was inputted into the Google Sheet 
 * **Step Stretch Goal (5% Growth)** - A +5% "Progressive Overload" target. Consistently hitting this goal "pulls" the baseline upward over time, expanding the engine's total capacity.
 
-## 📖 Data Glossary
+## Data Glossary
 
-### **Core Dimensions**
-| Field Name | Description |
+This project utilizes two primary BigQuery views to separate real-time efficiency metrics from long-term forecasting. Below is the breakdown of every dimension and metric used in the model.
+
+### **1. Core Dimensions (Shared Logic)**
+| Field | Definition |
 | :--- | :--- |
-| **Date** | The primary calendar key for activity tracking. |
-| **month_number** | Numeric month (1-12) used to force chronological sorting in visualizations. |
-| **month_year** | Formatted string (YYYY-MM) to ensure timeline continuity across multiple years. |
+| **Date** | The primary calendar key for each activity entry. |
+| **year_number** | Numeric year for long-term annual trend analysis. |
+| **month_number** | **Crucial Sorting Field:** Prevents alphabetical sorting (April before August). |
+| **month_name** | The display label for charts (e.g., "April", "May"). |
+| **month_year** | Unique string (YYYY-MM) used to keep a continuous timeline across multiple years. |
+| **week_number** | Groups data into 7-day cycles to identify weekly habit patterns. |
+| **Gym_YN** | A Boolean flag identifying days with intentional workout sessions. |
 | **activity_segment** | Behavioral classification (e.g., "Gym Routine", "Travelling") based on step volume. |
+| **data_segment** | Distinguishes between **"Actuals"** (past data) and **"Planned/Future"** (forecasted dates). |
+| **lifestyle_era** | Qualitative label to track major life phases (e.g., "Post-Pandemic") for historical context. |
 
-### **The Efficiency Model (`base_view`)**
-| Field Name | Description |
+### **2. Efficiency & Actuals (`base_view`)**
+| Field | Definition |
 | :--- | :--- |
-| **is_high_travel_day** | Binary flag identifying high-volume step outliers (>20k steps). |
-| **Efficiency_MPG** | Cardiovascular Economy: `Total Steps / Average Heart Rate`. |
-| **Capacity_Score** | Standardized performance index using a 30x multiplier on Efficiency MPG. |
+| **gym_count** | A running tally of total gym sessions within a specific period. |
+| **is_high_travel_day** | A binary flag for days exceeding 20k steps; used to isolate outliers from training data. |
+| **Efficiency_MPG** | Cardiovascular Economy: Calculates physical output per heartbeat (`Steps / Heart Rate`). |
+| **Capacity_Score** | The Performance Index: Standardizes daily efficiency into a 30-point scale for visual indexing. |
 
-### **The Forecasting Model (`actual_v_targets`)**
-| Field Name | Description |
+### **3. Forecasting & Targets (`actual_v_targets`)**
+| Field | Definition |
 | :--- | :--- |
+| **actual_distance** | Real-world kilometers covered based on Apple Watch GPS/pedometer data. |
+| **capacity_actual** | The calculated capacity score for days where active data exists. |
 | **step_baseline** | Maintenance Forecast: The 90-day rolling average of step volume. |
 | **step_stretch_goal** | Growth Forecast: Baseline + 5% target for progressive overload. |
-| **capacity_actual** | Real-time performance score for active tracking days. |
-| **capacity_variance** | The performance gap: Delta between `capacity_actual` and `capacity_baseline`. |
-
+| **distance_baseline** | The 90-day rolling average of total distance (km) covered. |
+| **distance_stretch** | Distance Baseline + 5% target for endurance growth. |
+| **capacity_baseline** | The 90-day rolling average of your Efficiency MPG x 30. |
+| **capacity_stretch** | Capacity Baseline + 5% target for cardiovascular system growth. |
+| **capacity_variance** | The Performance Gap: The delta between current output and the forecasted baseline. |
