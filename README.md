@@ -20,7 +20,7 @@ Data collection is a critical step.
 
 3) It also requires having Big Query setup. Creating a dataset & table (using the Google Sheet)
 
-## 🧬 The "Biological KPI" Suite
+## KEY KPI'S TO TRACK PERFORMANCE 
 This project utilizes three proprietary metrics to distinguish between mere "movement" and "performance."
 
 ### 1. Efficiency MPG (Steps per Heartbeat)
@@ -37,15 +37,12 @@ This project utilizes three proprietary metrics to distinguish between mere "mov
 * **The "Turbocharger" Metric:** While Capacity Score measures total volume, **Avg Steps per Session** measures **Intensity**. 
 * **Insight:** Capacity Score alone lacks context. High-value insights come from pairing volume with intensity—proving the engine isn't just running longer, but harder during training sessions.
 
----
 
-## 📈 The Forecasting Engine
+## The Forecasting Engine
 The dashboard utilizes a **90-day rolling window** to project benchmarks into the future. 
 
 * **Step Baseline (Maintenance):** The predicted volume required to maintain current fitness based on the last 3 months of behavior.
 * **Step Stretch Goal (Growth):** A +5% "Progressive Overload" target. Consistently hitting this goal "pulls" the baseline upward over time, expanding the engine's total capacity.
-
----
 
 ## 🛠 Tech Stack & Transformation
 * **Data Source:** Apple Watch (Health Auto Export)
