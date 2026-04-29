@@ -5,7 +5,7 @@ Transforming Apple Watch health data to provide richer insights with using the G
 Apple Health provides some good data but it's also quite limiting as well, I wanted to dig into the data more and surfass richer insights to understand the impact of my gym sessions which is very much linked to my strectching I do at least once a month. The common view is to do 10K steps a day which is a great benchmark to have but it was not giving me the insights I wanted. The goal was to move away from step count which I was using as the success metric.  
 
 ## THE PROCESS 
-Data collection is a critical step. 
+The data collection prcoess is the biggest step and getting it right is critical. The process post the data collection should be smoother. 
 
 1) To get the data exported out of Apple Watch it requires using Health Auto Export (or similar) - https://apps.apple.com/us/app/health-auto-export-json-csv/id1115567069 it provides the ability to get the data into CSV.
 
