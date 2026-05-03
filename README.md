@@ -45,13 +45,16 @@ Using Big Query utilizing a **90-day rolling look-back period** to look into the
 90-day lookback was selected for 2 reasons: 
 
 1) Relevancy - 90 day windows captures the most recent trends and ensures forecasts are releastic and attainable. Looking back at 6 months of data is a poorer predictor in fitness. THe most recent is the most accurate which is why 90-days is the sweet spot
-2) Volatility - Using the 90-day average the forecast is not massively impacted by a massive spike when travelling or a netflix and chill day 
-
-In the Google Sheet, it requires extending out the dates i.e. in April 2026 - extending the dates to end July 2026 which covers the 90-day rolling look back period. Extending the dates to end December 2026 can be done but it will only cover a 90-day look-back from the last available date inputted into the Google sheet. 
-
+2) Volatility - Using the 90-day average the forecast is not massively impacted by a massive spike when travelling or a netflix and chill day
+   
 * **Step Baseline** (**Forecasted Step Count**) - The predicted volume required to maintain current fitness based on the last 3 months of behavior.
 * **Step Count** (**Actual Step Count**) - The step count that was inputted into the Google Sheet 
-* **Step Stretch Goal (5% Growth)** - A +5% "Progressive Overload" target. Consistently hitting this goal "pulls" the baseline upward over time, expanding the engine's total capacity.
+* **Step Stretch Goal (5% Growth)** - A +5% "Progressive Overload" target. Consistently hitting this goal "pulls" the baseline upward over time, expanding the engine's total capacity
+
+How the data gets updated into Google Sheets can impact the forecasting: There are 2 routes - Real Time v Fixed Benchmarking 
+
+1) Fixed Benchmarking - To understand April data, only upload April's data on 1st May meaning the forecasted data for April which is based on January to March is frozen
+2) Real Time - If April's data is updated on 16th April for the first 15 days that will change the forecast for April 
 
 ## DATA GLOSSARY
 
