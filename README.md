@@ -39,7 +39,7 @@ From the data available in the Google Sheet, I have developed three custom KPI's
 * **The "Turbocharger" Metric:** While Capacity Score measures total volume, **Avg Steps per Session** measures **Intensity**. 
 * **Insight:** Capacity Score alone lacks context. High-value insights come from pairing volume with intensity—proving the engine isn't just running longer, but harder during training sessions.
 
-## FORECASTING - 90-DAY VIEW
+## FORECASTING 90-DAY VIEW
 Using Big Query utilizing a **90-day rolling look-back period** to look into the future. 
 
 90-day lookback was selected for 2 reasons: 
