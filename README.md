@@ -14,7 +14,7 @@ The data collection prcoess is the biggest step and getting it right is critical
    * Heart Rate
    * Distance (KM)
 
-2) Then get the data into Google Sheets using this template (do not change headers) - https://docs.google.com/spreadsheets/d/1rJIg44mvjqyTCQPpO0dZ13MtRhzehohWx9Nis5gkFgs/edit?usp=sharing 
+2) Get the data into Google Sheets using this template (do not change headers) - https://docs.google.com/spreadsheets/d/1rJIg44mvjqyTCQPpO0dZ13MtRhzehohWx9Nis5gkFgs/edit?usp=sharing 
 
    The key addtional requirement in the Google Sheet is the tracking if you have visited the Gym, which is tracked as Y(Yes) and N(No). 
 
