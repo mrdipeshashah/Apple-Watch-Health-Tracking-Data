@@ -165,5 +165,20 @@ The dashboard is structured into three layers:
 
 Developed a strategic planning and forecasting tool in Google Sheets to help plan. It goes from insights into daily action. 
 
+https://docs.google.com/spreadsheets/d/1Q2cBNVyj1n206IFyTJT0eU4nLHXotpTktqlHwN0YWs0/edit?usp=sharing
+
+The key features is the run-rate analysis providing what the monthly and daily steps need to be acheive the yearly goal. 
+
 How the Google Sheet works: 
-* 
+* B2 - Input last years step count
+* B3 - Input the target for the upcoming year
+* Column F input the actual step count
+
+The key insights come from: 
+* B7 - The expected run rate to date
+* B8 - The progress to date
+* B9 - The variance between expected and progress to date
+* Column H provides an updated step count for the upcoming momnth v target
+* Column I provides an update avg daily step count v target
+
+
