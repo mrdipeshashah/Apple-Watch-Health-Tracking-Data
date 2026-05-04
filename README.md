@@ -160,3 +160,10 @@ The dashboard is structured into three layers:
 #### **Behavioral Segmentation (Pre and Post Stretching)**
 * **Focus:** Stacked bar chart categorizing all activity into tiers (Gym, Exploring, Travelling, etc.).
 * **Insight:** Shows the "Activity Mix" change over time, highlighting how intentional gym sessions have become the dominant driver of total volume.
+
+## STEP COUNT PLANNING AND FORECASTING
+
+Developed a strategic planning and forecasting tool in Google Sheets to help plan. It goes from insights into daily action. 
+
+How the Google Sheet works: 
+* 
