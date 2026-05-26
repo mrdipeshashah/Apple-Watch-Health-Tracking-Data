@@ -54,7 +54,12 @@ Using Big Query utilizing a **90-day rolling look-back period** to look into the
 How the data gets updated into Google Sheets can impact the forecasting: There are 2 routes - Real Time v Fixed Benchmarking 
 
 1) Fixed Benchmarking - To understand April data, only upload April's data on 1st May meaning the forecasted data for April which is based on January to March is frozen
-2) Real Time - If April's data is updated on 16th April for the first 15 days that will change the forecast for April 
+2) Real Time - If April's data is updated on 16th April for the first 15 days that will change the forecast for April
+
+When comparing 
+
+<img width="1049" height="574" alt="image" src="https://github.com/user-attachments/assets/1d2ff5a3-c42c-46fa-873c-e9c52154c38b" />
+
 
 ## DATA GLOSSARY
 
