@@ -56,10 +56,13 @@ How the data gets updated into Google Sheets can impact the forecasting: There a
 1) Fixed Benchmarking - To understand April data, only upload April's data on 1st May meaning the forecasted data for April which is based on January to March is frozen
 2) Real Time - If April's data is updated on 16th April for the first 15 days that will change the forecast for April
 
-When comparing 
+The 90-day had a high predictive accuracy with a 2% difference between actual step count v forecasted step count
+
+I compared 90 day v 14 day v 30 day rolling forecast
+- 30-day has a 1% difference v actual step count. This helps as my routine is set and it’s quite predictable
+- 14-day has a 75% difference v actual step count. It’s too volatile with sample size too small to predict performance 
 
 <img width="1049" height="574" alt="image" src="https://github.com/user-attachments/assets/1d2ff5a3-c42c-46fa-873c-e9c52154c38b" />
-
 
 ## DATA GLOSSARY
 
