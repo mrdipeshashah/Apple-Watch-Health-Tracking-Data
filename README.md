@@ -113,7 +113,7 @@ https://datastudio.google.com/reporting/803e5c48-fb6d-4721-8dad-9ee0ab49e25f
 
 ### DASHBOARD TEMPLATE
 
-A copy of the dashobard can be made and linked to the Big Query views 
+A templated dashobard can be made, inked to the Big Query views to build your own health view
 
 https://datastudio.google.com/reporting/29fdaf9a-2cf2-4616-9640-92cf41a6dcda
 
