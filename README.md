@@ -62,7 +62,7 @@ I compared 90 day v 14 day v 30 day rolling forecast
 - 30-day has a 1% difference v actual step count. This helps as my routine is set and it’s quite predictable
 - 14-day has a 75% difference v actual step count. It’s too volatile with sample size too small to predict performance 
 
-<img width="1049" height="574" alt="image" src="https://github.com/user-attachments/assets/1d2ff5a3-c42c-46fa-873c-e9c52154c38b" />
+<img width="1039" height="569" alt="image" src="https://github.com/user-attachments/assets/1ac8bd2d-7be4-4143-82c1-2cdae820d8fc" />
 
 ## DATA GLOSSARY
 
